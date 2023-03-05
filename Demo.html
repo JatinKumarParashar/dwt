@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+    <script
+      type="text/javascript"
+      src="Resources/dynamsoft.webtwain.initiate.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="Resources/dynamsoft.webtwain.config.js"
+    ></script>
+  </head>
+  <body>
+    <div>
+      SelectSource:<select
+        size="1"
+        id="source"
+        style="position: relative; width: 220px"
+      ></select>
+    </div>
+    <br />
+    <div>
+      Pixel Type:
+      <label for="BW"
+        ><input type="radio" id="BW" name="PixelType" />B&amp;W
+      </label>
+      <label for="Gray"
+        ><input type="radio" id="Gray" name="PixelType" />Gray</label
+      >
+      <label for="RGB"
+        ><input
+          type="radio"
+          id="RGB"
+          name="PixelType"
+          checked="checked"
+        />Color</label
+      >
+    </div>
+    <br />
+    <div>
+      <label> <input type="checkbox" id="ADF" />Auto Feeder</label>
+      <label> <input type="checkbox" id="ShowUI" />Show UI<br /></label>
+    </div>
+    <br />
+    <div>
+      Resolution:
+      <select size="1" id="Resolution">
+        <option value="100">100</option>
+        <option value="150">150</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+      </select>
+    </div>
+    <br />
+    <input
+      type="button"
+      value="Scan And Save 1"
+      onclick="AcquireImage();"
+    /><br />
+    <input
+      type="button"
+      value="Scan And Save 2"
+      onclick="SaveAsDifferentfile();"
+    /><br />
+    <input
+      type="button"
+      onclick="removeBlankPages();"
+      value="Remove Blank Page"
+    />
+    <div id="dwtcontrolContainer" style="width: 100%; height: 100%"></div>
+
+    <script src="demo.js"></script>
+  </body>
+</html>
